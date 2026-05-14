@@ -1,22 +1,24 @@
 :root {
-  --bg: #070913;
-  --line: rgba(255, 255, 255, 0.11);
-  --muted: #a3afc2;
-  --neon: #9cff68;
-  --panel: rgba(13, 18, 32, 0.9);
-  --paper: #f8fafc;
-  --shadow: 0 28px 120px rgba(0, 0, 0, 0.38);
+  --bg: #f4efe6;
+  --charcoal: #141519;
+  --ink: #15171d;
+  --line: rgba(20, 21, 25, 0.12);
+  --muted: #687080;
+  --paper: #fffaf0;
+  --panel: rgba(255, 250, 240, 0.86);
+  --shadow: 0 24px 80px rgba(32, 25, 12, 0.12);
+  --white: #ffffff;
 
-  --sans: 'Aptos Display', 'Bahnschrift', 'Segoe UI', sans-serif;
+  --sans: 'Aptos', 'Segoe UI', sans-serif;
   --display: 'Arial Black', 'Impact', 'Bahnschrift', sans-serif;
   --mono: 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace;
 
   background:
-    radial-gradient(circle at 10% -10%, rgba(107, 220, 255, 0.28), transparent 24rem),
-    radial-gradient(circle at 92% 2%, rgba(156, 255, 104, 0.16), transparent 22rem),
-    linear-gradient(135deg, #070913 0%, #10172a 50%, #070913 100%);
-  color: var(--paper);
-  font: clamp(14px, 0.85vw, 17px) / 1.5 var(--sans);
+    radial-gradient(circle at 12% 0%, rgba(255, 156, 89, 0.18), transparent 24rem),
+    radial-gradient(circle at 92% 10%, rgba(91, 141, 255, 0.16), transparent 22rem),
+    var(--bg);
+  color: var(--ink);
+  font: clamp(14px, 0.82vw, 17px) / 1.5 var(--sans);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -39,22 +41,22 @@ body {
 }
 
 h1 {
-  color: var(--paper);
+  color: var(--ink);
   font-family: var(--display);
-  font-size: clamp(3rem, 6.3vw, 7rem);
+  font-size: clamp(2.8rem, 5.7vw, 6.8rem);
   letter-spacing: -0.07em;
-  line-height: 0.9;
-  margin: 0 0 22px;
+  line-height: 0.88;
+  margin: 0;
   max-width: 980px;
   text-transform: uppercase;
 }
 
 h2 {
-  color: var(--paper);
+  color: var(--ink);
   font-family: var(--display);
-  font-size: clamp(2rem, 3.4vw, 4rem);
-  letter-spacing: -0.055em;
-  line-height: 0.95;
+  font-size: clamp(2rem, 3.6vw, 4.6rem);
+  letter-spacing: -0.06em;
+  line-height: 0.92;
   margin: 0;
 }
 
@@ -67,6 +69,6 @@ a,
 input,
 select,
 textarea {
-  outline-color: var(--neon);
+  outline-color: var(--accent);
   outline-offset: 3px;
 }
