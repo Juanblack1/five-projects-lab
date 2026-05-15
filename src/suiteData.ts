@@ -21,7 +21,7 @@ export type Transaction = {
 export const suiteProjects: SuiteProject[] = [
   {
     key: 'focus',
-    title: 'Focus Forge',
+    title: 'Focus Rhythm',
     kicker: 'Pomodoro cockpit',
     summary: 'Timer de foco com ciclos, progresso visual e comandos simples.',
     accent: '#8cff66',
@@ -29,7 +29,7 @@ export const suiteProjects: SuiteProject[] = [
   },
   {
     key: 'budget',
-    title: 'Budget Pulse',
+    title: 'Money Compass',
     kicker: 'Finance tracker',
     summary: 'Controle de receitas e despesas com saldo, categorias e historico.',
     accent: '#ffd166',
@@ -37,7 +37,7 @@ export const suiteProjects: SuiteProject[] = [
   },
   {
     key: 'github',
-    title: 'GitHub Pulse',
+    title: 'GitHub Radar',
     kicker: 'Public API lens',
     summary: 'Consulta atividade publica de um usuario no GitHub sem token.',
     accent: '#6bdcff',
@@ -45,7 +45,7 @@ export const suiteProjects: SuiteProject[] = [
   },
   {
     key: 'csv',
-    title: 'CSV Clinic',
+    title: 'CSV Triage',
     kicker: 'Data cleaner',
     summary: 'Limpa CSV colado, detecta campos vazios e remove linhas duplicadas.',
     accent: '#caa8ff',
@@ -53,7 +53,7 @@ export const suiteProjects: SuiteProject[] = [
   },
   {
     key: 'logs',
-    title: 'Log Forge',
+    title: 'Log Sentinel',
     kicker: 'Ops analyzer',
     summary: 'Resume logs por severidade e gera um nome seguro de arquivo.',
     accent: '#ff7a90',

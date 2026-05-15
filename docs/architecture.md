@@ -2,11 +2,11 @@
 
 Esta aplicacao e uma suite fixa com cinco modulos internos. Ela nao deve evoluir como uma plataforma generica para criar projetos. A arquitetura deve proteger a identidade e a autonomia de cada produto:
 
-- Forja de Foco: produtividade, Pomodoro e foco.
-- Pulso Financeiro: controle de financas pessoais.
-- Pulso GitHub: consumo da API publica do GitHub.
-- Clinica CSV: limpeza, analise e tratamento de CSV.
-- Forja de Logs: logs, operacoes e monitoramento.
+- Ritmo de Foco / Focus Rhythm: produtividade, Pomodoro e foco.
+- Bussola Financeira / Money Compass: controle de financas pessoais.
+- Radar GitHub / GitHub Radar: consumo da API publica do GitHub.
+- Triagem CSV / CSV Triage: limpeza, analise e tratamento de CSV.
+- Sentinela de Logs / Log Sentinel: logs, operacoes e monitoramento.
 
 ## Organizacao Atual
 

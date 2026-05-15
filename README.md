@@ -22,11 +22,11 @@ Five Projects Lab e uma suite interativa com cinco mini-produtos prontos para us
 
 | Produto | O que faz | Ideal para testar |
 | --- | --- | --- |
-| Focus Forge | Timer Pomodoro com presets, checklist, distracoes, intencao de sprint e relatorio. | Estado local, timers e UX de produtividade. |
-| Budget Pulse | Controle de receitas/despesas com metas, limites, filtros e resumo por categoria. | Formularios, validacao e dados derivados. |
-| GitHub Pulse | Consulta perfil, repositorios e atividade publica do GitHub sem token. | Fetch, estados de API, erros e rate limit. |
-| CSV Clinic | Limpa CSV colado ou enviado, detecta duplicados/campos vazios e exporta resultado. | Parsing, qualidade de dados e download. |
-| Log Forge | Analisa severidade de logs, sinais de risco e gera relatorio de incidente. | Processamento de texto e ferramentas de ops. |
+| Focus Rhythm | Timer Pomodoro com presets, checklist, distracoes, intencao de sprint e relatorio. | Estado local, timers e UX de produtividade. |
+| Money Compass | Controle de receitas/despesas com metas, limites, filtros e resumo por categoria. | Formularios, validacao e dados derivados. |
+| GitHub Radar | Consulta perfil, repositorios e atividade publica do GitHub sem token. | Fetch, estados de API, erros e rate limit. |
+| CSV Triage | Limpa CSV colado ou enviado, detecta duplicados/campos vazios e exporta resultado. | Parsing, qualidade de dados e download. |
+| Log Sentinel | Analisa severidade de logs, sinais de risco e gera relatorio de incidente. | Processamento de texto e ferramentas de ops. |
 
 ## Experiencia
 
@@ -91,7 +91,7 @@ Importante: todo valor `VITE_*` e exposto no navegador. Nao coloque API keys, to
 
 - `.env` e `.env.*` sao ignorados pelo Git.
 - `.env.example` contem apenas instrucoes e placeholders.
-- GitHub Pulse usa endpoints publicos e nao autenticados do GitHub.
+- GitHub Radar usa endpoints publicos e nao autenticados do GitHub.
 - Integracoes privadas futuras devem usar backend, secrets da Vercel ou GitHub Actions secrets.
 
 ## Licenca

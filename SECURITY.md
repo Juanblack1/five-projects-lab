@@ -11,6 +11,6 @@ Five Projects Lab is a browser-only product lab and does not require private cre
 
 ## Data notes
 
-- CSV Clinic processes pasted text locally in the browser.
-- Log Forge processes pasted log text locally in the browser.
-- GitHub Pulse reads public GitHub activity without a token.
+- CSV Triage processes pasted text locally in the browser.
+- Log Sentinel processes pasted log text locally in the browser.
+- GitHub Radar reads public GitHub activity without a token.
