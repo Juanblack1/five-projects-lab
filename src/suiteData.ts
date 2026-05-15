@@ -96,9 +96,9 @@ export const sampleLogs = `[INFO] server started on port 4173
 [INFO] retry completed
 [DEBUG] render cycle 42`
 
-export function formatCurrency(value: number) {
-  return new Intl.NumberFormat('en-US', {
-    currency: 'USD',
+export function formatCurrency(value: number, locale = 'en-US', currency = 'USD') {
+  return new Intl.NumberFormat(locale, {
+    currency,
     style: 'currency',
   }).format(value)
 }
@@ -139,7 +139,10 @@ export function parseCsv(input: string) {
 
   for (const line of lines.slice(1)) {
     const cells = line.split(',').map((cell) => cell.trim())
-    missing += cells.filter((cell) => cell.length === 0).length
+    while (cells.length < headers.length) {
+      cells.push('')
+    }
+    missing += cells.slice(0, headers.length).filter((cell) => cell.length === 0).length
     const key = cells.join('|').toLowerCase()
     if (seen.has(key)) {
       duplicates += 1

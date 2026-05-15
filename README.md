@@ -1,14 +1,21 @@
 # Five Projects Lab
 
-Five Projects Lab is a private portfolio suite with five small, polished, working mini-products built in React and TypeScript.
+Five Projects Lab is a private portfolio suite with five polished, working mini-products built in React and TypeScript. The interface supports English and Brazilian Portuguese with a persistent language switch.
 
 ## Projects
 
-- Focus Forge: Pomodoro timer with focus and break modes.
-- Budget Pulse: income and expense tracker with derived totals.
-- GitHub Pulse: public GitHub activity lookup without a token.
-- CSV Clinic: CSV cleaner with duplicate and missing-cell detection.
-- Log Forge: log severity analyzer with safe archive-name generation.
+- Focus Forge: Pomodoro timer with focus and break modes, editable checklist, sprint intent and session counter.
+- Budget Pulse: income and expense tracker with derived totals, savings rate, category mix and removable entries.
+- GitHub Pulse: public GitHub activity lookup without a token, loading/error states, profile card and event timeline.
+- CSV Clinic: CSV cleaner with duplicate and missing-cell detection, preview table, copy action and CSV download.
+- Log Forge: log severity analyzer with filters, risk level, safe archive-name generation and copyable summary.
+
+## Interface
+
+- Language switch: PT-BR and EN.
+- Responsive product layout for desktop and mobile.
+- Keyboard-visible focus states and reduced-motion support.
+- No client-side secrets required.
 
 ## Stack
 

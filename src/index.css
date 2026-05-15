@@ -1,24 +1,47 @@
 :root {
-  --bg: #f4efe6;
-  --charcoal: #141519;
-  --ink: #15171d;
-  --line: rgba(20, 21, 25, 0.12);
-  --muted: #687080;
-  --paper: #fffaf0;
-  --panel: rgba(255, 250, 240, 0.86);
-  --shadow: 0 24px 80px rgba(32, 25, 12, 0.12);
-  --white: #ffffff;
+  --color-bg: #eef2ed;
+  --color-border: rgba(22, 25, 31, 0.13);
+  --color-danger-bg: #ffe8e3;
+  --color-danger-border: rgba(166, 42, 32, 0.28);
+  --color-danger-text: #8e261f;
+  --color-ink: #16191f;
+  --color-muted: #65707b;
+  --color-panel: #e9eee8;
+  --color-surface: #fbf9f2;
+  --color-warning-border: rgba(161, 110, 21, 0.38);
+  --color-white: #ffffff;
 
-  --sans: 'Aptos', 'Segoe UI', sans-serif;
-  --display: 'Arial Black', 'Impact', 'Bahnschrift', sans-serif;
-  --mono: 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-body: 'Aptos', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace;
+  --font-title: 'Bahnschrift', 'Aptos Display', 'Segoe UI', system-ui, sans-serif;
+
+  --motion-fast: 140ms;
+  --motion-medium: 240ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --radius-control: 6px;
+  --radius-pill: 999px;
+  --radius-surface: 8px;
+
+  --shadow-1: 0 1px 2px rgba(22, 25, 31, 0.05), 0 16px 42px rgba(22, 25, 31, 0.08);
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
 
   background:
-    radial-gradient(circle at 12% 0%, rgba(255, 156, 89, 0.18), transparent 24rem),
-    radial-gradient(circle at 92% 10%, rgba(91, 141, 255, 0.16), transparent 22rem),
-    var(--bg);
-  color: var(--ink);
-  font: clamp(14px, 0.82vw, 17px) / 1.5 var(--sans);
+    linear-gradient(90deg, rgba(22, 25, 31, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(22, 25, 31, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, #f6f4ec 0%, #e7eee9 48%, #f9f8f2 100%);
+  background-size: 3rem 3rem, 3rem 3rem, auto;
+  color: var(--color-ink);
+  font: 16px / 1.5 var(--font-body);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -40,28 +63,46 @@ body {
   box-sizing: border-box;
 }
 
-h1 {
-  color: var(--ink);
-  font-family: var(--display);
-  font-size: clamp(2.8rem, 5.7vw, 6.8rem);
-  letter-spacing: -0.07em;
-  line-height: 0.88;
+h1,
+h2,
+h3,
+p {
   margin: 0;
-  max-width: 980px;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-ink);
+  font-family: var(--font-title);
+  font-weight: 800;
+  letter-spacing: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+h1 {
+  font-size: 3.75rem;
+  line-height: 0.98;
+  margin-bottom: var(--space-3);
+  max-width: 56rem;
   text-transform: uppercase;
 }
 
 h2 {
-  color: var(--ink);
-  font-family: var(--display);
-  font-size: clamp(2rem, 3.6vw, 4.6rem);
-  letter-spacing: -0.06em;
-  line-height: 0.92;
-  margin: 0;
+  font-size: 2.5rem;
+  line-height: 1;
+  text-transform: uppercase;
 }
 
-p {
-  margin: 0;
+h3 {
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
 }
 
 button,
@@ -69,6 +110,45 @@ a,
 input,
 select,
 textarea {
-  outline-color: var(--accent);
+  outline-color: transparent;
   outline-offset: 3px;
+}
+
+button,
+a {
+  transition:
+    background-color var(--motion-fast) var(--ease-out),
+    border-color var(--motion-fast) var(--ease-out),
+    color var(--motion-fast) var(--ease-out),
+    filter var(--motion-fast) var(--ease-out),
+    transform var(--motion-fast) var(--ease-out);
+}
+
+:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--accent, #4a7dff) 74%, #16191f);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent, #4a7dff) 28%, transparent);
+}
+
+@media (max-width: 760px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
