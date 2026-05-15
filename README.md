@@ -1,70 +1,99 @@
 # Five Projects Lab
 
-Five Projects Lab is a product lab with five polished, working mini-products built in React and TypeScript. The interface supports English and Brazilian Portuguese with a persistent language switch.
+Five Projects Lab e uma suite interativa com cinco mini-produtos prontos para uso, feita em React, TypeScript e Vite. A proposta e mostrar diferentes fluxos de produto em uma unica experiencia: produtividade, financas, GitHub, tratamento de CSV e analise de logs.
 
-## Entry page
+[Acessar demo publica](https://juanblack1.github.io/five-projects-lab/) · [Ver repositorio](https://github.com/Juanblack1/five-projects-lab)
 
-The app opens with a bilingual product entrance for Laboratorio de Cinco Projetos / Five Projects Lab. It explains the lab, previews the active flow, shows all five modules and lets the user jump directly into any project.
+![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=06131d)
+![TypeScript](https://img.shields.io/badge/TypeScript-6-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Vitest](https://img.shields.io/badge/Vitest-tested-6E9F18?style=for-the-badge&logo=vitest&logoColor=white)
 
-## Projects
+## Destaques
 
-- Focus Forge: Pomodoro timer with custom focus/break durations, presets, editable checklist, sprint intent, session counter, distraction log and sprint report.
-- Budget Pulse: income and expense tracker with goals, category limits, filters, derived totals, savings rate, category mix and removable entries.
-- GitHub Pulse: public GitHub activity lookup without a token, loading/error states, profile card, event distribution, repository cards and language summary.
-- CSV Clinic: CSV cleaner with duplicate and missing-cell detection, row filtering, find/replace, header normalization, column profile, copy action and CSV download.
-- Log Forge: log severity analyzer with search, severity distribution, signal detection, risk level, safe archive-name generation and incident export.
+- Cinco produtos funcionando dentro da mesma interface.
+- Entrada bilingue em PT-BR e EN, com idioma persistente.
+- Tema claro/escuro e visual proprio para cada modulo.
+- Layout responsivo para desktop e mobile.
+- Navegacao por hash: `#focus`, `#budget`, `#github`, `#csv` e `#logs`.
+- Estados de foco visiveis, suporte a `prefers-reduced-motion` e sem segredos no cliente.
 
-## Interface
+## Produtos
 
-- Language switch: PT-BR and EN.
-- Each project has a distinct visual treatment for its domain: focus cockpit, finance ledger, API console, spreadsheet lab and ops command center.
-- Project hashes select the active module: `#focus`, `#budget`, `#github`, `#csv` and `#logs`.
-- Responsive product layout for desktop and mobile.
-- Modern motion layer with entrance, panel, hover and progress animations.
-- Keyboard-visible focus states and reduced-motion support.
-- No client-side secrets required.
+| Produto | O que faz | Ideal para testar |
+| --- | --- | --- |
+| Focus Forge | Timer Pomodoro com presets, checklist, distracoes, intencao de sprint e relatorio. | Estado local, timers e UX de produtividade. |
+| Budget Pulse | Controle de receitas/despesas com metas, limites, filtros e resumo por categoria. | Formularios, validacao e dados derivados. |
+| GitHub Pulse | Consulta perfil, repositorios e atividade publica do GitHub sem token. | Fetch, estados de API, erros e rate limit. |
+| CSV Clinic | Limpa CSV colado ou enviado, detecta duplicados/campos vazios e exporta resultado. | Parsing, qualidade de dados e download. |
+| Log Forge | Analisa severidade de logs, sinais de risco e gera relatorio de incidente. | Processamento de texto e ferramentas de ops. |
 
-## Architecture
+## Experiencia
 
-The codebase is organized around the five fixed modules of the suite. See [`docs/architecture.md`](docs/architecture.md) for the folder responsibilities and evolution rules.
+O app abre com uma pagina de apresentacao do Laboratorio de Cinco Projetos / Five Projects Lab. A partir dela, a pessoa pode entrar direto em qualquer modulo e alternar entre idioma, tema e produtos sem precisar recarregar a pagina.
+
+Cada modulo tem uma identidade visual propria: cockpit de foco, ledger financeiro, console de API, laboratorio de planilhas e command center de operacoes.
 
 ## Stack
 
 - React 19
 - TypeScript
-- Vite
+- Vite 8
 - Vitest
 - ESLint
+- Tailwind CSS 4 via Vite plugin
 
-## Getting started
+## Rodando localmente
 
 ```bash
 npm install
 npm run dev
 ```
 
-## Quality checks
+O servidor local do Vite normalmente fica disponivel em `http://localhost:5173/`.
+
+## Scripts
 
 ```bash
-npm run lint
-npm run test
-npm run build
-npm run check
+npm run dev      # inicia o ambiente local
+npm run lint     # valida padroes de codigo
+npm run test     # executa testes com Vitest
+npm run build    # gera a versao de producao
+npm run check    # roda lint, test e build em sequencia
 ```
 
-## Environment variables
+## Deploy
 
-The app does not require secrets.
+Este repositorio publica automaticamente no GitHub Pages quando ha push na branch `main`.
 
-Important: every `VITE_*` value is exposed to the browser. Do not put API keys, tokens, database URLs, service-role keys, private keys, or credentials in `VITE_*` variables.
+- Link publico: https://juanblack1.github.io/five-projects-lab/
+- Workflow: `.github/workflows/deploy.yml`
+- Build: `npm run build`
+- Pasta publicada: `dist`
 
-## Security
+Para Vercel, importe o repositorio pelo painel da Vercel e mantenha os defaults de Vite:
 
-- `.env` and `.env.*` are ignored by Git.
-- `.env.example` contains placeholders only.
-- GitHub Pulse uses public unauthenticated GitHub endpoints.
-- Future private integrations should use a backend or GitHub Actions secrets.
+- Framework preset: `Vite`
+- Build command: `npm run build`
+- Output directory: `dist`
 
-## License
+## Arquitetura
+
+A codebase e organizada em cinco modulos fixos da suite. Consulte [`docs/architecture.md`](docs/architecture.md) para ver responsabilidades de pastas, regras de evolucao e proximos passos recomendados.
+
+## Variaveis de ambiente
+
+O app nao precisa de credenciais privadas.
+
+Importante: todo valor `VITE_*` e exposto no navegador. Nao coloque API keys, tokens, URLs privadas, service-role keys, chaves privadas ou credenciais em variaveis `VITE_*`.
+
+## Seguranca
+
+- `.env` e `.env.*` sao ignorados pelo Git.
+- `.env.example` contem apenas instrucoes e placeholders.
+- GitHub Pulse usa endpoints publicos e nao autenticados do GitHub.
+- Integracoes privadas futuras devem usar backend, secrets da Vercel ou GitHub Actions secrets.
+
+## Licenca
 
 MIT
