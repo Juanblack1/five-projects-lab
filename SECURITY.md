@@ -1,6 +1,6 @@
 # Security Policy
 
-Five Projects Lab is a browser-only portfolio suite and does not require private credentials.
+Five Projects Lab is a browser-only product lab and does not require private credentials.
 
 ## Secret rules
 

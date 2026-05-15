@@ -10,10 +10,11 @@ export type SuiteProject = {
 }
 
 export type Transaction = {
-  id: string
-  label: string
   amount: number
   category: string
+  date: string
+  id: string
+  label: string
   type: 'income' | 'expense'
 }
 
@@ -62,24 +63,27 @@ export const suiteProjects: SuiteProject[] = [
 
 export const initialTransactions: Transaction[] = [
   {
-    id: 't-1',
-    label: 'Freelance landing page',
     amount: 1800,
     category: 'Income',
+    date: '2026-05-03',
+    id: 't-1',
+    label: 'Freelance landing page',
     type: 'income',
   },
   {
-    id: 't-2',
-    label: 'Cloud lab credits',
     amount: 120,
     category: 'Tools',
+    date: '2026-05-07',
+    id: 't-2',
+    label: 'Cloud lab credits',
     type: 'expense',
   },
   {
-    id: 't-3',
-    label: 'Design assets',
     amount: 86,
     category: 'Creative',
+    date: '2026-04-22',
+    id: 't-3',
+    label: 'Design assets',
     type: 'expense',
   },
 ]
@@ -103,22 +107,58 @@ export function formatCurrency(value: number, locale = 'en-US', currency = 'USD'
   }).format(value)
 }
 
+function toCents(value: number) {
+  return Math.round(value * 100)
+}
+
+function fromCents(value: number) {
+  return value / 100
+}
+
 export function calculateBudget(transactions: Transaction[]) {
-  return transactions.reduce(
-    (summary, transaction) => {
+  const summary = transactions.reduce(
+    (current, transaction) => {
+      const amountInCents = toCents(transaction.amount)
+
       if (transaction.type === 'income') {
-        summary.income += transaction.amount
+        current.income += amountInCents
       } else {
-        summary.expense += transaction.amount
-        summary.byCategory[transaction.category] =
-          (summary.byCategory[transaction.category] ?? 0) + transaction.amount
+        current.expense += amountInCents
+        current.byCategory[transaction.category] =
+          (current.byCategory[transaction.category] ?? 0) + amountInCents
+
+        if (!current.largestExpense || transaction.amount > current.largestExpense.amount) {
+          current.largestExpense = transaction
+        }
       }
 
-      summary.balance = summary.income - summary.expense
-      return summary
+      current.balance = current.income - current.expense
+      return current
     },
-    { balance: 0, byCategory: {} as Record<string, number>, expense: 0, income: 0 },
+    {
+      balance: 0,
+      byCategory: {} as Record<string, number>,
+      expense: 0,
+      income: 0,
+      largestExpense: null as Transaction | null,
+    },
   )
+
+  const byCategory = Object.fromEntries(
+    Object.entries(summary.byCategory).map(([category, amount]) => [category, fromCents(amount)]),
+  )
+  const topExpenseCategory = Object.entries(byCategory).sort((a, b) => b[1] - a[1])[0]
+
+  return {
+    balance: fromCents(summary.balance),
+    byCategory,
+    expense: fromCents(summary.expense),
+    income: fromCents(summary.income),
+    largestExpense: summary.largestExpense,
+    topExpenseCategory: topExpenseCategory
+      ? { amount: topExpenseCategory[1], category: topExpenseCategory[0] }
+      : null,
+  }
 }
 
 export function parseCsv(input: string) {

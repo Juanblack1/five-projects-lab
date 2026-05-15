@@ -1,4 +1,34 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+@theme inline {
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-background: var(--background);
+  --color-border: var(--border);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-ring: var(--ring);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --radius-lg: var(--radius-surface);
+  --radius-md: var(--radius-control);
+  --radius-sm: 4px;
+}
+
 :root {
+  --accent: #6bdcff;
+  --accent-foreground: #0d1016;
+  --background: #f6f4ec;
+  --border: rgba(22, 25, 31, 0.13);
+  --card: #ffffff;
+  --card-foreground: #16191f;
   --color-bg: #eef2ed;
   --color-border: rgba(22, 25, 31, 0.13);
   --color-danger-bg: #ffe8e3;
@@ -10,6 +40,14 @@
   --color-surface: #fbf9f2;
   --color-warning-border: rgba(161, 110, 21, 0.38);
   --color-white: #ffffff;
+  --foreground: #16191f;
+  --muted: #edf1ee;
+  --muted-foreground: #65707b;
+  --primary: #0f172a;
+  --primary-foreground: #f8fafc;
+  --ring: #239cd1;
+  --secondary: #e9eee8;
+  --secondary-foreground: #16191f;
 
   --font-body: 'Aptos', 'Segoe UI', system-ui, sans-serif;
   --font-mono: 'Cascadia Mono', 'SFMono-Regular', Consolas, monospace;
@@ -35,10 +73,12 @@
   --space-10: 2.5rem;
   --space-12: 3rem;
 
-  background:
+  --page-background:
     linear-gradient(90deg, rgba(22, 25, 31, 0.05) 1px, transparent 1px),
     linear-gradient(180deg, rgba(22, 25, 31, 0.05) 1px, transparent 1px),
     linear-gradient(180deg, #f6f4ec 0%, #e7eee9 48%, #f9f8f2 100%);
+
+  background: var(--page-background);
   background-size: 3rem 3rem, 3rem 3rem, auto;
   color: var(--color-ink);
   font: 16px / 1.5 var(--font-body);
@@ -48,12 +88,59 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+[data-theme='dark'] {
+  --accent-foreground: #081017;
+  --background: #10151c;
+  --border: rgba(231, 238, 239, 0.14);
+  --card: #171d25;
+  --card-foreground: #f7fafc;
+  --color-bg: #0e131a;
+  --color-border: rgba(231, 238, 239, 0.14);
+  --color-danger-bg: rgba(255, 122, 144, 0.15);
+  --color-danger-border: rgba(255, 122, 144, 0.34);
+  --color-danger-text: #ff9cab;
+  --color-ink: #f7fafc;
+  --color-muted: #a7b0ba;
+  --color-panel: #151b23;
+  --color-surface: #202832;
+  --color-warning-border: rgba(255, 209, 102, 0.32);
+  --foreground: #f7fafc;
+  --muted: #202832;
+  --muted-foreground: #a7b0ba;
+  --primary: #6bdcff;
+  --primary-foreground: #081017;
+  --ring: #7fe5ff;
+  --secondary: #202832;
+  --secondary-foreground: #f7fafc;
+  --shadow-1: 0 1px 0 rgba(255, 255, 255, 0.04), 0 1.5rem 4rem rgba(0, 0, 0, 0.24);
+
+  --page-background:
+    radial-gradient(circle at 18% 10%, rgba(107, 220, 255, 0.16), transparent 28rem),
+    radial-gradient(circle at 82% 4%, rgba(255, 122, 144, 0.1), transparent 26rem),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, #0d1016 0%, #10151c 52%, #0a0d12 100%);
+
+  background: var(--page-background);
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+}
+
 #root {
   min-height: 100svh;
   width: 100%;
 }
 
 body {
+  background: var(--page-background);
+  background-attachment: fixed;
+  background-size: 3rem 3rem, 3rem 3rem, auto;
   margin: 0;
   min-width: 320px;
   overflow-x: hidden;

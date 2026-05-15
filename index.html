@@ -5,6 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>five-projects-lab</title>
+    <script>
+      ;(() => {
+        const theme = localStorage.getItem('five-projects-lab-theme') || 'dark'
+        document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'
+        document.documentElement.style.colorScheme = document.documentElement.dataset.theme
+      })()
+    </script>
   </head>
   <body>
     <div id="root"></div>
