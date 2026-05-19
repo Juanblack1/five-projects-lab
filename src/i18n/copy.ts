@@ -48,12 +48,18 @@ export const copy = {
         quality: 'qualidade CSV',
         sessions: 'sessoes',
       },
+      nextSteps: 'Como comecar',
       summary: 'Painel da suite',
     },
     projects: {
       budget: {
         kicker: 'Financas pessoais',
         metricLabel: 'Meta atingida',
+        nextSteps: [
+          'Confira o saldo e a maior categoria no resumo.',
+          'Adicione ou edite um lancamento pelo formulario.',
+          'Use filtros para entender mes, tipo e categoria.',
+        ],
         skills: ['formularios', 'dados derivados', 'validacao'],
         summary: 'Controle receitas e despesas com categorias, saldo, taxa de poupanca e remocao segura.',
         title: 'Bussola Financeira',
@@ -61,6 +67,11 @@ export const copy = {
       csv: {
         kicker: 'Higiene de dados',
         metricLabel: 'Pontuacao',
+        nextSteps: [
+          'Importe um CSV ou carregue a amostra interna.',
+          'Marque as limpezas que deseja aplicar.',
+          'Compare antes/depois e baixe o CSV limpo.',
+        ],
         skills: ['parsing', 'qualidade de dados', 'exportacao'],
         summary: 'Cole uma tabela CSV, remova duplicatas, encontre celulas vazias e exporte o resultado limpo.',
         title: 'Triagem CSV',
@@ -68,6 +79,11 @@ export const copy = {
       focus: {
         kicker: 'Cabine Pomodoro',
         metricLabel: 'Progresso',
+        nextSteps: [
+          'Defina o objetivo do sprint antes de iniciar.',
+          'Ajuste o preset ou a duracao do ciclo.',
+          'Marque tarefas e registre distracoes no fim.',
+        ],
         skills: ['timer', 'estado local', 'UX produtiva'],
         summary: 'Conduza um ciclo de foco com objetivo, checklist editavel, pausa e progresso visivel.',
         title: 'Ritmo de Foco',
@@ -75,6 +91,11 @@ export const copy = {
       github: {
         kicker: 'API publica',
         metricLabel: 'Eventos',
+        nextSteps: [
+          'Digite um usuario publico do GitHub.',
+          'Analise perfil, repositorios e atividade recente.',
+          'Filtre por linguagem ou ordene pelos sinais mais fortes.',
+        ],
         skills: ['fetch', 'estados async', 'tratamento de erro'],
         summary: 'Analise um usuario publico do GitHub sem token, com perfil, eventos, repositorios e falhas claras.',
         title: 'Radar GitHub',
@@ -82,6 +103,11 @@ export const copy = {
       logs: {
         kicker: 'Operacoes',
         metricLabel: 'Risco',
+        nextSteps: [
+          'Cole logs ou simule um incidente.',
+          'Filtre por severidade, origem e busca livre.',
+          'Copie ou baixe o resumo para triagem.',
+        ],
         skills: ['texto', 'DevOps', 'resumo'],
         summary: 'Cole logs, filtre severidade, estime risco operacional e gere um resumo copiavel.',
         title: 'Sentinela de Logs',
@@ -424,12 +450,18 @@ export const copy = {
         quality: 'CSV quality',
         sessions: 'sessions',
       },
+      nextSteps: 'How to start',
       summary: 'Suite dashboard',
     },
     projects: {
       budget: {
         kicker: 'Personal finance',
         metricLabel: 'Goal reached',
+        nextSteps: [
+          'Check the balance and top category in the summary.',
+          'Add or edit a transaction from the form.',
+          'Use filters to understand month, type and category.',
+        ],
         skills: ['forms', 'derived data', 'validation'],
         summary: 'Track income and expenses with categories, balance, savings rate and safe removal.',
         title: 'Money Compass',
@@ -437,6 +469,11 @@ export const copy = {
       csv: {
         kicker: 'Data hygiene',
         metricLabel: 'Score',
+        nextSteps: [
+          'Import a CSV or load the internal sample.',
+          'Choose which cleanup actions to apply.',
+          'Compare before/after and download the clean CSV.',
+        ],
         skills: ['parsing', 'data quality', 'export'],
         summary: 'Paste CSV data, remove duplicates, find missing cells and export the cleaned result.',
         title: 'CSV Triage',
@@ -444,6 +481,11 @@ export const copy = {
       focus: {
         kicker: 'Pomodoro cockpit',
         metricLabel: 'Progress',
+        nextSteps: [
+          'Set the sprint intent before starting.',
+          'Adjust the preset or cycle duration.',
+          'Complete tasks and log distractions at the end.',
+        ],
         skills: ['timer', 'local state', 'productive UX'],
         summary: 'Run a focus cycle with an intent, editable checklist, break mode and visible progress.',
         title: 'Focus Rhythm',
@@ -451,6 +493,11 @@ export const copy = {
       github: {
         kicker: 'Public API',
         metricLabel: 'Events',
+        nextSteps: [
+          'Enter a public GitHub username.',
+          'Review profile, repositories and recent activity.',
+          'Filter by language or sort by the strongest signal.',
+        ],
         skills: ['fetch', 'async states', 'error handling'],
         summary: 'Analyze a public GitHub user without a token, including profile, events, repos and clear failures.',
         title: 'GitHub Radar',
@@ -458,6 +505,11 @@ export const copy = {
       logs: {
         kicker: 'Operations',
         metricLabel: 'Risk',
+        nextSteps: [
+          'Paste logs or simulate an incident.',
+          'Filter by severity, source and free text.',
+          'Copy or download the triage summary.',
+        ],
         skills: ['text', 'DevOps', 'summary'],
         summary: 'Paste logs, filter severity, estimate operational risk and generate a copyable summary.',
         title: 'Log Sentinel',

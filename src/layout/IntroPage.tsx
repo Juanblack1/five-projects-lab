@@ -77,6 +77,14 @@ export function IntroPage({
     onOpenLab(project)
   }
 
+  function scrollToModules() {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    document.getElementById('intro-modules-title')?.scrollIntoView({
+      behavior: reduceMotion ? 'auto' : 'smooth',
+      block: 'start',
+    })
+  }
+
   return (
     <section className="intro-screen" aria-labelledby="intro-title">
       <div className="intro-backdrop" aria-hidden="true">
@@ -112,7 +120,7 @@ export function IntroPage({
             <Button className="primary-action" onClick={() => onOpenLab()} size="lg" type="button">
               {intro.primary}
             </Button>
-            <Button onClick={() => onOpenLab('github')} size="lg" type="button" variant="outline">
+            <Button onClick={scrollToModules} size="lg" type="button" variant="outline">
               {intro.secondary}
             </Button>
           </div>

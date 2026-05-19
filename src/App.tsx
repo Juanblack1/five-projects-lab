@@ -284,6 +284,8 @@ function App() {
         <section className="workbench">
           <ProjectBrief
             currentLabel={t.hero.current}
+            nextLabel={t.hero.nextSteps}
+            nextSteps={selectedProjectCopy.nextSteps}
             skills={selectedProjectCopy.skills}
             summary={selectedProjectCopy.summary}
             title={selectedProjectCopy.title}

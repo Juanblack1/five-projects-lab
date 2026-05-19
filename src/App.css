@@ -959,6 +959,35 @@
   overflow-wrap: anywhere;
 }
 
+.brief-steps {
+  border-top: 1px solid var(--color-border);
+  display: grid;
+  gap: var(--space-2);
+  padding-top: var(--space-3);
+}
+
+.brief-steps > span {
+  color: color-mix(in srgb, var(--accent) 70%, var(--color-ink));
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.brief-steps ol {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.brief-steps li {
+  color: var(--color-muted);
+  line-height: 1.45;
+  padding-left: var(--space-1);
+}
+
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -3122,6 +3151,86 @@ th {
   color: var(--color-white);
 }
 
+[data-theme='light'] .project-github {
+  --scene-line: color-mix(in srgb, var(--accent) 28%, var(--color-border));
+  --scene-panel: color-mix(in srgb, var(--accent) 10%, var(--color-panel));
+  --scene-surface: color-mix(in srgb, var(--color-white) 94%, var(--accent));
+}
+
+[data-theme='light'] .project-github .workbench {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(22, 25, 31, 0.045) 0,
+      rgba(22, 25, 31, 0.045) 1px,
+      transparent 1px,
+      transparent 2.25rem
+    ),
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 16%, transparent), transparent 54%),
+    var(--scene-panel);
+}
+
+[data-theme='light'] .project-github .project-brief,
+[data-theme='light'] .project-github .github-search-card,
+[data-theme='light'] .project-github .github-repo-toolbar,
+[data-theme='light'] .project-github .profile-card,
+[data-theme='light'] .project-github .metric-grid article,
+[data-theme='light'] .project-github .module-card,
+[data-theme='light'] .project-github .github-empty-state,
+[data-theme='light'] .project-github .repo-card {
+  background: var(--scene-surface);
+  border-color: var(--scene-line);
+}
+
+[data-theme='light'] .project-github .project-brief h2,
+[data-theme='light'] .project-github .project-brief .eyebrow,
+[data-theme='light'] .project-github .repo-card strong,
+[data-theme='light'] .project-github .profile-card strong,
+[data-theme='light'] .project-github .github-rate-card strong,
+[data-theme='light'] .project-github .github-empty-state strong,
+[data-theme='light'] .project-github .metric-grid strong,
+[data-theme='light'] .project-github .module-card strong,
+[data-theme='light'] .project-github .bar-row b,
+[data-theme='light'] .project-github .repo-section h3,
+[data-theme='light'] .project-github .repo-section .section-head span {
+  color: var(--color-ink);
+}
+
+[data-theme='light'] .project-github .project-brief p,
+[data-theme='light'] .project-github .project-brief .brief-steps li,
+[data-theme='light'] .project-github .repo-card,
+[data-theme='light'] .project-github .repo-card p,
+[data-theme='light'] .project-github .repo-card small,
+[data-theme='light'] .project-github .repo-section .empty-line,
+[data-theme='light'] .project-github .github-empty-state p,
+[data-theme='light'] .project-github .github-rate-card p,
+[data-theme='light'] .project-github .github-profile-card b,
+[data-theme='light'] .project-github .github-profile-meta span,
+[data-theme='light'] .project-github .bar-row p,
+[data-theme='light'] .project-github .bar-row em,
+[data-theme='light'] .project-github .module-card p,
+[data-theme='light'] .project-github .github-panel > .status-line,
+[data-theme='light'] .project-github .github-search-card label span,
+[data-theme='light'] .project-github .github-repo-toolbar label span {
+  color: var(--color-muted);
+}
+
+[data-theme='light'] .project-github .github-profile-meta span {
+  background: color-mix(in srgb, var(--accent) 12%, var(--color-white));
+}
+
+[data-theme='light'] .project-github .github-repo-card b,
+[data-theme='light'] .project-github .profile-card a {
+  color: color-mix(in srgb, var(--accent) 62%, var(--color-ink));
+}
+
+[data-theme='light'] .project-github input,
+[data-theme='light'] .project-github select {
+  background: var(--color-white);
+  border-color: var(--color-border);
+  color: var(--color-ink);
+}
+
 .project-csv {
   --scene-line: color-mix(in srgb, var(--accent) 30%, var(--color-border));
   --scene-panel: color-mix(in srgb, var(--accent) 11%, var(--color-panel));
@@ -3478,6 +3587,123 @@ th {
 .project-logs .logs-incident-card button {
   background: var(--accent);
   color: #0d1016;
+}
+
+.project-github .brief-steps,
+.project-logs .brief-steps {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+.project-github .brief-steps > span,
+.project-logs .brief-steps > span {
+  color: color-mix(in srgb, var(--accent) 72%, var(--color-white));
+}
+
+.project-github .brief-steps li,
+.project-logs .brief-steps li {
+  color: rgba(255, 255, 255, 0.74);
+}
+
+[data-theme='light'] .project-logs {
+  --scene-line: color-mix(in srgb, var(--accent) 26%, var(--color-border));
+  --scene-panel: color-mix(in srgb, var(--accent) 9%, var(--color-panel));
+  --scene-surface: color-mix(in srgb, var(--color-white) 94%, var(--accent));
+}
+
+[data-theme='light'] .project-logs .workbench {
+  background:
+    linear-gradient(125deg, color-mix(in srgb, var(--accent) 14%, transparent), transparent 42%),
+    linear-gradient(90deg, rgba(22, 25, 31, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(22, 25, 31, 0.04) 1px, transparent 1px),
+    var(--scene-panel);
+  background-size: auto, 2.75rem 2.75rem, 2.75rem 2.75rem, auto;
+}
+
+[data-theme='light'] .project-logs .project-brief,
+[data-theme='light'] .project-logs .logs-input-card,
+[data-theme='light'] .project-logs .logs-ops-card,
+[data-theme='light'] .project-logs .logs-stat-grid article,
+[data-theme='light'] .project-logs .log-stream,
+[data-theme='light'] .project-logs .log-detail-panel,
+[data-theme='light'] .project-logs .logs-empty-state,
+[data-theme='light'] .project-logs .logs-incident-card,
+[data-theme='light'] .project-logs .logs-dark-card {
+  background: var(--scene-surface);
+  border-color: var(--scene-line);
+  color: var(--color-ink);
+}
+
+[data-theme='light'] .project-logs .project-brief h2,
+[data-theme='light'] .project-logs .project-brief .eyebrow,
+[data-theme='light'] .project-logs .logs-ops-card strong,
+[data-theme='light'] .project-logs .logs-stat-grid strong,
+[data-theme='light'] .project-logs .log-detail-panel strong,
+[data-theme='light'] .project-logs .logs-empty-state strong,
+[data-theme='light'] .project-logs .logs-dark-card strong,
+[data-theme='light'] .project-logs .bar-row b,
+[data-theme='light'] .project-logs .log-stream h3,
+[data-theme='light'] .project-logs .log-list b,
+[data-theme='light'] .project-logs .log-list code {
+  color: var(--color-ink);
+}
+
+[data-theme='light'] .project-logs .project-brief p,
+[data-theme='light'] .project-logs .brief-steps li,
+[data-theme='light'] .project-logs .logs-toolbar label span,
+[data-theme='light'] .project-logs .editor-grid label > span,
+[data-theme='light'] .project-logs .logs-filter-rack label span,
+[data-theme='light'] .project-logs .logs-input-card > span,
+[data-theme='light'] .project-logs .logs-ops-card > span,
+[data-theme='light'] .project-logs .logs-file-picker span,
+[data-theme='light'] .project-logs .logs-stat-grid span,
+[data-theme='light'] .project-logs .log-detail-panel > span,
+[data-theme='light'] .project-logs .logs-ops-card p,
+[data-theme='light'] .project-logs .logs-ops-card b,
+[data-theme='light'] .project-logs .logs-ops-card em,
+[data-theme='light'] .project-logs .logs-file-picker p,
+[data-theme='light'] .project-logs .log-detail-panel p,
+[data-theme='light'] .project-logs .logs-empty-state p,
+[data-theme='light'] .project-logs .bar-row p,
+[data-theme='light'] .project-logs .bar-row em,
+[data-theme='light'] .project-logs .log-list span,
+[data-theme='light'] .project-logs .log-list time {
+  color: var(--color-muted);
+}
+
+[data-theme='light'] .project-logs .brief-steps,
+[data-theme='light'] .project-github .brief-steps {
+  border-top-color: var(--color-border);
+}
+
+[data-theme='light'] .project-logs .brief-steps > span,
+[data-theme='light'] .project-github .brief-steps > span {
+  color: color-mix(in srgb, var(--accent) 66%, var(--color-ink));
+}
+
+[data-theme='light'] .project-logs .logs-input-card textarea,
+[data-theme='light'] .project-logs .log-detail-panel > code {
+  background: var(--color-white);
+  border-color: var(--color-border);
+  color: var(--color-ink);
+}
+
+[data-theme='light'] .project-logs .logs-file-picker,
+[data-theme='light'] .project-logs .signal-grid b,
+[data-theme='light'] .project-logs .severity-tabs button {
+  background: rgba(22, 25, 31, 0.055);
+  border-color: var(--scene-line);
+  color: var(--color-ink);
+}
+
+[data-theme='light'] .project-logs .logs-file-picker input[type='file'] {
+  background: var(--color-white);
+  border-color: var(--color-border);
+  color: var(--color-ink);
+}
+
+[data-theme='light'] .project-logs .logs-file-picker input[type='file']::file-selector-button {
+  background: var(--color-ink);
+  color: var(--color-white);
 }
 
 [data-theme='dark'] .view-lab,
@@ -3951,8 +4177,8 @@ th {
   }
 
   .intro-copy h1 {
-    font-size: 1.55rem;
-    line-height: 1.04;
+    font-size: clamp(2.05rem, 11vw, 3rem);
+    line-height: 0.98;
     max-width: 100%;
   }
 
@@ -3974,14 +4200,14 @@ th {
   .intro-modules-head,
   .intro-module-grid {
     grid-template-columns: 1fr;
-    max-width: 18rem;
-    width: min(100%, 18rem);
+    max-width: 100%;
+    width: 100%;
   }
 
   .intro-copy,
   .intro-console,
   .intro-modules {
-    max-width: 18rem;
+    max-width: 100%;
     width: 100%;
   }
 
@@ -3995,11 +4221,22 @@ th {
   }
 
   .intro-module-card {
-    min-height: 14.5rem;
+    gap: var(--space-2);
+    min-height: auto;
+    padding: var(--space-3);
+  }
+
+  .intro-module-visual {
+    aspect-ratio: 2.55;
+    padding: var(--space-2);
   }
 
   .intro-module-visual b {
     font-size: 2rem;
+  }
+
+  .intro-module-card small {
+    line-height: 1.35;
   }
 
   .intro-console {

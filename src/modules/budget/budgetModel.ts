@@ -52,7 +52,7 @@ export function createDefaultTransactionDraft(language: Language): TransactionDr
 export function getDefaultBudgetFilters(): BudgetFilters {
   return {
     category: 'all',
-    month: getCurrentMonthKey(),
+    month: 'all',
     search: '',
     type: 'all',
   }
