@@ -1,5 +1,9 @@
 # Five Projects Lab
 
+<p align="center">
+  <img src="assets/cover.png" alt="Five Projects Lab cover" width="100%" />
+</p>
+
 Five Projects Lab e uma suite interativa com cinco mini-produtos prontos para uso, feita em React, TypeScript e Vite. A proposta e mostrar diferentes fluxos de produto em uma unica experiencia: produtividade, financas, GitHub, tratamento de CSV e analise de logs.
 
 [Acessar demo publica](https://juanblack1.github.io/five-projects-lab/) · [Ver repositorio](https://github.com/Juanblack1/five-projects-lab)
